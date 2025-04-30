@@ -1,0 +1,246 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #e63946;
+    --secondary-color: #f1faee;
+    --accent-color: #a8dadc;
+    --dark-color: #1d3557;
+    --text-color: #457b9d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.content {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.divider {
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+    margin: 1.5rem auto;
+    width: 80%;
+}
+
+.construction {
+    margin: 2.5rem 0;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.construction-icon {
+    width: 80px;
+    height: 80px;
+    background-image: linear-gradient(135deg, var(--primary-color), #ff8c94);
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 10s linear infinite;
+}
+
+.construction-icon:before, .construction-icon:after {
+    content: '';
+    position: absolute;
+    background-color: white;
+}
+
+.construction-icon:before {
+    width: 30px;
+    height: 30px;
+    top: 25px;
+    left: 25px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.construction-icon:after {
+    width: 40px;
+    height: 3px;
+    bottom: 25px;
+    left: 20px;
+    border-radius: 2px;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.construction p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.contact {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.contact p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.email {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.countdown {
+    margin-top: 2.5rem;
+}
+
+.countdown p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.time-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-section span {
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: var(--dark-color);
+    color: white;
+    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.time-section p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        padding: 2rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    #timer {
+        gap: 0.8rem;
+    }
+    
+    .time-section span {
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .time-section span {
+        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
+    }
+}
